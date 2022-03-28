@@ -9,12 +9,6 @@ return require('packer').startup(function(use)
     config = "require('treesitter-config')"
   }
   use {
-    'tamton-aquib/staline.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    event = "BufRead",
-    config = "require('staline-config')"
-  }
-  use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
@@ -57,4 +51,10 @@ return require('packer').startup(function(use)
   use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
   use {'williamboman/nvim-lsp-installer'}
   use {'tpope/vim-surround'}
+  use {
+  'hoob3rt/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  event = "BufWinEnter",
+  config = "require('lualine-config')"
+}
 end)
